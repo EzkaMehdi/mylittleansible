@@ -1,0 +1,35 @@
+tasks:
+  - module: copy
+    params:
+      src: C:\Users\Ahmed\Documents\Mehdi\mylittleansible\files\index.html
+      dest: /var/local/index.html
+      backup: true
+
+  - module: apt
+    params:
+      name: "python3"
+      state: present
+  
+  - module: template
+    params:
+      src: python_config.py.j2  
+      dest: /var/local/python_config.py.j2 
+      vars: 
+        app_name: "MyAwesomeApp"
+        debug: "True"
+        database_uri: "postgresql://user:password@localhost/myappdb"
+        secret_key: "verysecretkey123"
+      template_path: C:\Users\Ahmed\Documents\Mehdi\mylittleansible\files 
+  
+  - module: command
+    params:
+      cmd: cat /var/local/python_config.py.j2
+      
+  - module: service
+    params:
+      name: ssh
+      state: restart
+
+
+  
+

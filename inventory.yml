@@ -1,0 +1,16 @@
+hosts:
+  server1:
+    ssh_address: 127.0.0.1
+    ssh_port: 2222
+    ssh_user: root
+    ssh_password: root
+  server2:
+    ssh_address: 127.0.0.1
+    ssh_port: 2223
+    ssh_user: root
+    ssh_password: root
+  server3:
+    ssh_address: 127.0.0.1
+    ssh_port: 2224
+    ssh_user: root
+    ssh_password: root 
